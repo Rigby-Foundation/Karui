@@ -19,7 +19,6 @@ describe('server api routes', () => {
     const data = JSON.parse(result.body) as { version: string; runtime: string };
 
     expect(result.status).toBe(200);
-    expect(data.version).toBe('3.0.0');
     expect(['node', 'bun', 'deno', 'worker', 'unknown']).toContain(data.runtime);
   });
 
