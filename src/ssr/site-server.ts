@@ -157,7 +157,7 @@ function safeStaticPath(rootDir: string, requestPath: string): string | null {
   const root = path.resolve(rootDir);
   const resolved = path.resolve(root, `.${decodedPath}`);
 
-  if (!resolved.startsWith(root)) {
+  if (!resolved.startsWith(root + path.sep) && resolved !== root) {
     return null;
   }
 
