@@ -11,5 +11,4 @@ export const site = defineCounterSite({
   pagesRoot: './pages',
   notFoundFile: './pages/404.tsx',
   stateKey: '__SITE_STATE__',
-  autoHydrate: true,
 });

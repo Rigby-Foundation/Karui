@@ -124,7 +124,6 @@ const DEFAULT_TEMPLATE_FILES: Record<string, (context: TemplateContext) => strin
     "  errorFile: './pages/error.tsx',",
     "  stateKey: '__SITE_STATE__',",
     "  hydrateMode: 'full',",
-    '  autoHydrate: true,',
     '});',
     '',
   ].join('\n'),
