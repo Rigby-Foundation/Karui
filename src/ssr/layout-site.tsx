@@ -17,25 +17,11 @@ export interface CounterLayoutSiteConfig extends Omit<CounterSiteConfig, 'pages'
   pages: Record<string, FileSystemModule<CounterSiteState>>;
   layout: CounterSiteLayout;
   hydrateMode?: CounterSiteHydrationMode;
-  /** @deprecated Use `hydrateMode` instead. Will be removed in 3.2.0. */
-  autoHydrate?: boolean;
-}
-
-function resolveHydrationMode(config: CounterLayoutSiteConfig): CounterSiteHydrationMode {
-  if (config.hydrateMode) {
-    return config.hydrateMode;
-  }
-
-  if (config.autoHydrate === false) {
-    return 'none';
-  }
-
-  return 'full';
 }
 
 export function createCounterLayoutSite(config: CounterLayoutSiteConfig): CounterSite {
-  const { layout, autoHydrate = true, ...rest } = config;
-  const hydrateMode = resolveHydrationMode(config);
+  const { layout, ...rest } = config;
+  const hydrateMode = config.hydrateMode ?? 'full';
 
   const site = createCounterSite({
     ...rest,
@@ -43,7 +29,7 @@ export function createCounterLayoutSite(config: CounterLayoutSiteConfig): Counte
     hydrateMode,
   });
 
-  if (autoHydrate && hydrateMode !== 'none' && typeof window !== 'undefined') {
+  if (hydrateMode !== 'none' && typeof window !== 'undefined') {
     site.hydrate();
   }
 

@@ -1,4 +1,4 @@
-import type { CounterSiteErrorContext } from 'better-helperjs/ssr';
+import type { CounterSiteErrorContext } from 'karui/ssr';
 
 export const meta = {
   title: 'Error',

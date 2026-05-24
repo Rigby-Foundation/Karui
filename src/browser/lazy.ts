@@ -1,6 +1,5 @@
 import type { DomTools } from './dom.js';
 import { assertBrowser } from './dom.js';
-import { warnDeprecated } from '../core/deprecated.js';
 
 export class LazyLoader {
   public readonly loaded: Record<string, true | Promise<unknown>> = {};
@@ -62,11 +61,4 @@ export class LazyLoader {
     throw new Error(`Function ${fn} not loaded from ${script}`);
   }
 
-  /**
-   * @deprecated Deprecated and will be removed in 3.2.0. Use `resolve()` instead.
-   */
-  public _(script: string, fn: string): Promise<(...args: unknown[]) => unknown> {
-    warnDeprecated('lazy._');
-    return this.resolve(script, fn);
-  }
 }

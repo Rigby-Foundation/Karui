@@ -1,6 +1,6 @@
 {
-  "name": "better-helperjs",
-  "version": "3.0.7",
+  "name": "karui",
+  "version": "4.0.0",
   "description": "Full-stack TypeScript framework with JSX runtime, file-based routing, and SSR for Node/Bun/Deno.",
   "author": "Rigby Foundation",
   "type": "module",
@@ -8,7 +8,7 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "better-helperjs": "./dist/cli.js"
+    "karui": "./dist/cli.js"
   },
   "files": [
     "dist",

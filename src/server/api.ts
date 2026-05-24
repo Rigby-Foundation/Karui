@@ -32,7 +32,7 @@ export function resolveApiRequest(method: string, requestUrl: string, body = '')
       headers: defaultHeaders,
       body: JSON.stringify({
         ok: true,
-        service: 'better-helperjs-api',
+        service: 'karui-api',
         runtime: detectRuntime(),
         now: new Date().toISOString(),
       }),

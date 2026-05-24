@@ -1,5 +1,5 @@
-import type { FileLayoutProps } from 'better-helperjs/router/file-based';
-import type { CounterSiteState } from 'better-helperjs/ssr';
+import type { FileLayoutProps } from 'karui/router/file-based';
+import type { CounterSiteState } from 'karui/ssr';
 
 const sectionStyle = [
   'margin-top:12px',

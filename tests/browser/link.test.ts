@@ -21,17 +21,5 @@ describe('LinkManager', () => {
     expect(command).toHaveBeenCalledWith('on');
   });
 
-  it('supports deprecated aliases _cmd/_i', () => {
-    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
-    const dom = createDomTools(document);
-    const link = new LinkManager(dom);
 
-    link._cmd = ['a=1'];
-    link._i = false;
-
-    expect(link._cmd).toEqual(['a=1']);
-    expect(link._i).toBe(false);
-    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('[Deprecated] link._cmd'));
-    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('[Deprecated] link._i'));
-  });
 });

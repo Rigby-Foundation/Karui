@@ -1,4 +1,4 @@
-import type { CounterSiteRouteContext } from 'better-helperjs/ssr';
+import type { CounterSiteRouteContext } from 'karui/ssr';
 
 export const meta = {
   title: '404',

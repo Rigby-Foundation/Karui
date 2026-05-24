@@ -22,7 +22,7 @@ npm run dev         # starts the test SSR site from ./site
 Create a new Vite + SSR project:
 
 ```bash
-npx better-helperjs create my-app
+npx karui create my-app
 ```
 
 Options:
@@ -52,12 +52,12 @@ Where pages are:
 
 ## JSX and router without React/Preact
 
-- JSX runtime: `better-helperjs/jsx-runtime`, `better-helperjs/jsx-dev-runtime`, `better-helperjs/jsx`
-- Hooks: `useState`, `useReducer`, `useEffect`, `useMemo`, `useCallback`, `useRef` from `better-helperjs/jsx`
-- Context API: `createContext`, `useContext` from `better-helperjs/jsx`
-- Router core: `better-helperjs/router`
-- File-based router helpers: `better-helperjs/router/file-based`
-- State helpers: `better-helperjs/core` (`createCounterRenderState`, `serializeState`, ...)
+- JSX runtime: `karui/jsx-runtime`, `karui/jsx-dev-runtime`, `karui/jsx`
+- Hooks: `useState`, `useReducer`, `useEffect`, `useMemo`, `useCallback`, `useRef` from `karui/jsx`
+- Context API: `createContext`, `useContext` from `karui/jsx`
+- Router core: `karui/router`
+- File-based router helpers: `karui/router/file-based`
+- State helpers: `karui/core` (`createCounterRenderState`, `serializeState`, ...)
 
 ### File-based router extras
 
@@ -66,8 +66,8 @@ Where pages are:
 - Error entities: `pages/error.tsx` (global), `export const errorBoundary = ...` (route-level)
 - Not Found entities: `pages/404.tsx` or `pages/not-found.tsx`
 - `notFound()` helper for loader/component scenarios
-- SPA links: `<Link href=\"/route\" />` from `better-helperjs/router`
-- Dev SSR server (`better-helperjs/ssr/site-server`) requires `vite` in the application project.
+- SPA links: `<Link href=\"/route\" />` from `karui/router`
+- Dev SSR server (`karui/ssr/site-server`) requires `vite` in the application project.
 
 ### SSR modes
 

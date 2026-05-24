@@ -2,8 +2,8 @@ import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 
 const jsxRuntimeAlias = {
-  'better-helperjs/jsx-runtime': resolve(__dirname, 'src/jsx/jsx-runtime.ts'),
-  'better-helperjs/jsx-dev-runtime': resolve(__dirname, 'src/jsx/jsx-dev-runtime.ts'),
+  'karui/jsx-runtime': resolve(__dirname, 'src/jsx/jsx-runtime.ts'),
+  'karui/jsx-dev-runtime': resolve(__dirname, 'src/jsx/jsx-dev-runtime.ts'),
 };
 
 export default defineConfig({
@@ -12,15 +12,15 @@ export default defineConfig({
   },
   esbuild: {
     jsx: 'automatic',
-    jsxImportSource: 'better-helperjs',
+    jsxImportSource: 'karui',
   },
   build: {
     target: 'es2015',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'BetterHelper',
+      name: 'Karui',
       formats: ['es', 'umd', 'iife'],
-      fileName: (format) => `better-helper.${format}.js`,
+      fileName: (format) => `karui.${format}.js`,
     },
     outDir: 'dist/vite',
     emptyOutDir: true,

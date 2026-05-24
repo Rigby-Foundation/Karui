@@ -7,8 +7,6 @@ export interface ShellRenderProps<State> {
   status: number;
   title: string;
   children: VNodeChild;
-  /** @deprecated Use `children` instead. Will be removed in 3.2.0. */
-  content: VNodeChild;
   setState: (updater: (state: State) => State) => void;
 }
 
@@ -56,7 +54,6 @@ export function renderWithRouter<State>(options: RenderWithRouterOptions<State>)
       status: route.status,
       title: routeTitle,
       children: route.node,
-      content: route.node,
       setState: () => {},
     })
   );
@@ -163,7 +160,6 @@ export function mountWithRouter<State>(options: MountWithRouterOptions<State>): 
           status: route.status,
           title: routeTitle,
           children: route.node,
-          content: route.node,
           setState,
         })
       );

@@ -9,7 +9,7 @@ describe('server api routes', () => {
 
     expect(result.status).toBe(200);
     expect(data.ok).toBe(true);
-    expect(data.service).toBe('better-helperjs-api');
+    expect(data.service).toBe('karui-api');
     expect(typeof data.runtime).toBe('string');
     expect(typeof data.now).toBe('string');
   });

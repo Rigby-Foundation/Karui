@@ -1,6 +1,5 @@
 import type { DomTools } from './dom.js';
 import { assertBrowser } from './dom.js';
-import { warnDeprecated } from '../core/deprecated.js';
 
 export type LinkHandler = (value?: string) => void;
 export interface LinkMap {
@@ -18,38 +17,6 @@ export class LinkManager {
 
   constructor(private readonly dom: DomTools) {}
 
-  /**
-   * @deprecated Deprecated and will be removed in 3.2.0. Use `cmd` instead.
-   */
-  public get _cmd(): string[] {
-    warnDeprecated('link._cmd');
-    return this.cmd;
-  }
-
-  /**
-   * @deprecated Deprecated and will be removed in 3.2.0. Use `cmd` instead.
-   */
-  public set _cmd(next: string[]) {
-    warnDeprecated('link._cmd');
-    this.cmd.length = 0;
-    this.cmd.push(...next);
-  }
-
-  /**
-   * @deprecated Deprecated and will be removed in 3.2.0. Internal transition flag.
-   */
-  public get _i(): boolean {
-    warnDeprecated('link._i');
-    return this.firstTransition;
-  }
-
-  /**
-   * @deprecated Deprecated and will be removed in 3.2.0. Internal transition flag.
-   */
-  public set _i(next: boolean) {
-    warnDeprecated('link._i');
-    this.firstTransition = next;
-  }
 
   public compile(): string[] {
     assertBrowser();

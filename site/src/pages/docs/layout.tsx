@@ -1,6 +1,6 @@
-import { Link } from 'better-helperjs/router';
-import type { FileLayoutProps } from 'better-helperjs/router/file-based';
-import type { CounterSiteState } from 'better-helperjs/ssr';
+import { Link } from 'karui/router';
+import type { FileLayoutProps } from 'karui/router/file-based';
+import type { CounterSiteState } from 'karui/ssr';
 
 const docsStyle = [
   'margin-top:10px',

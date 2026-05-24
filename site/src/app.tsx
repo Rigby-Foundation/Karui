@@ -1,4 +1,4 @@
-import { defineCounterSite, type CounterSiteState, type FileSystemModule } from 'better-helperjs/ssr';
+import { defineCounterSite, type CounterSiteState, type FileSystemModule } from 'karui/ssr';
 import Layout from './layout.js';
 
 const pages = import.meta.glob('./pages/**/*.tsx', { eager: true }) as Record<string, FileSystemModule<CounterSiteState>>;

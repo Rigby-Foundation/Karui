@@ -11,15 +11,6 @@ describe('LanguageService', () => {
     expect(parsed).toBe('{"title":"BetterHelper"}');
   });
 
-  it('legacy alias lang._ emits deprecation warning', () => {
-    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
-    const lang = new LanguageService(new HttpClient());
-
-    const attr = lang._('TITLE');
-
-    expect(attr).toBe(' data-trans="TITLE"');
-    expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('[Deprecated] lang._'));
-  });
 
   it('returns key and warns when translation is missing', () => {
     const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});

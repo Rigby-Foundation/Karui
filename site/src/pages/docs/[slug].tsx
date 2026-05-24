@@ -1,5 +1,5 @@
-import type { CounterSiteRouteContext } from 'better-helperjs/ssr';
-import { Link } from 'better-helperjs/router';
+import type { CounterSiteRouteContext } from 'karui/ssr';
+import { Link } from 'karui/router';
 
 export const meta = {
   title: 'Docs',

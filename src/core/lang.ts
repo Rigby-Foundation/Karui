@@ -1,5 +1,4 @@
 import type { HttpClient } from './http.js';
-import { warnDeprecated } from './deprecated.js';
 
 export type LangVariables = Record<string, string | number | boolean | null | undefined>;
 export type LangDictionary = Record<string, string>;
@@ -17,14 +16,6 @@ export class LanguageService {
 
   public attr(index: string): string {
     return ` data-trans="${index}"`;
-  }
-
-  /**
-   * @deprecated Deprecated and will be removed in 3.2.0. Use `attr()` instead.
-   */
-  public _(index: string): string {
-    warnDeprecated('lang._');
-    return this.attr(index);
   }
 
   public async load(name: string): Promise<string> {

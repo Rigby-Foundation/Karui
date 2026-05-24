@@ -1,5 +1,5 @@
-import type { CounterSiteLayoutProps } from 'better-helperjs/ssr';
-import { Link } from 'better-helperjs/router';
+import type { CounterSiteLayoutProps } from 'karui/ssr';
+import { Link } from 'karui/router';
 
 const shellStyle = [
   'max-width:960px',

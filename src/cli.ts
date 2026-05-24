@@ -21,10 +21,10 @@ interface CliOptions {
 
 function printUsage(): void {
   console.log([
-    'BetterHelperjs CLI',
+    'Karui CLI',
     '',
     'Usage:',
-    '  better-helperjs create <project-name> [options]',
+    '  karui create <project-name> [options]',
     '',
     'Options:',
     '  --pm <npm|pnpm|yarn|bun>   package manager for install',
@@ -189,6 +189,6 @@ async function main(): Promise<void> {
 
 main().catch((error) => {
   const message = error instanceof Error ? error.message : String(error);
-  console.error(`[better-helperjs-cli] ${message}`);
+  console.error(`[karui] ${message}`);
   process.exit(1);
 });

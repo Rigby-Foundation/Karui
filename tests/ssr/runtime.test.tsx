@@ -9,13 +9,13 @@ interface TestState {
   count: number;
 }
 
-function Shell({ state, content, setState }: ShellRenderProps<TestState>) {
+function Shell({ state, children, setState }: ShellRenderProps<TestState>) {
   return (
     <main>
       <button id="inc" onClick={() => setState((current) => ({ ...current, count: current.count + 1 }))}>
         count:{state.count}
       </button>
-      <section id="page">{content}</section>
+      <section id="page">{children}</section>
     </main>
   );
 }
