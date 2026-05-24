@@ -1,5 +1,5 @@
-import type { FileLayoutProps } from 'karui/router/file-based';
-import type { CounterSiteState } from 'karui/ssr';
+import type { FileLayoutProps } from '@rigbyhost/karui/router/file-based';
+import type { CounterSiteState } from '@rigbyhost/karui/ssr';
 
 const sectionStyle = [
   'margin-top:12px',

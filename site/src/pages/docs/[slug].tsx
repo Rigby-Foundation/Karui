@@ -1,5 +1,5 @@
-import type { CounterSiteRouteContext } from 'karui/ssr';
-import { Link } from 'karui/router';
+import type { CounterSiteRouteContext } from '@rigbyhost/karui/ssr';
+import { Link } from '@rigbyhost/karui/router';
 
 export const meta = {
   title: 'Docs',

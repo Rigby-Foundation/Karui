@@ -1,5 +1,5 @@
 {
-  "name": "karui",
+  "name": "@rigbyhost/karui",
   "version": "4.0.0",
   "description": "Full-stack TypeScript framework with JSX runtime, file-based routing, and SSR for Node/Bun/Deno.",
   "author": "Rigby Foundation",
@@ -8,7 +8,7 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "karui": "./dist/cli.js"
+    "@rigbyhost/karui": "./dist/cli.js"
   },
   "files": [
     "dist",

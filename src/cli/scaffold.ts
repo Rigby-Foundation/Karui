@@ -29,7 +29,7 @@ const DEFAULT_TEMPLATE_FILES: Record<string, (context: TemplateContext) => strin
         check: 'tsc -p tsconfig.json --noEmit',
       },
       dependencies: {
-        'karui': `^${frameworkVersion}`,
+        '@rigbyhost/karui': `^${frameworkVersion}`,
       },
       devDependencies: {
         '@types/node': '^24.3.0',
@@ -52,7 +52,7 @@ const DEFAULT_TEMPLATE_FILES: Record<string, (context: TemplateContext) => strin
         lib: ['ES2022', 'DOM', 'DOM.Iterable'],
         types: ['node', 'vite/client'],
         jsx: 'react-jsx',
-        jsxImportSource: 'karui',
+        jsxImportSource: '@rigbyhost/karui',
       },
       include: ['src/**/*.ts', 'src/**/*.tsx', 'server.ts'],
     },
@@ -66,7 +66,7 @@ const DEFAULT_TEMPLATE_FILES: Record<string, (context: TemplateContext) => strin
     'export default defineConfig({',
     '  esbuild: {',
     "    jsx: 'automatic',",
-    "    jsxImportSource: 'karui',",
+    "    jsxImportSource: '@rigbyhost/karui',",
     '  },',
     '  build: {',
     "    outDir: 'dist/client',",
@@ -100,7 +100,7 @@ const DEFAULT_TEMPLATE_FILES: Record<string, (context: TemplateContext) => strin
     '',
   ].join('\n'),
   'server.ts': () => [
-    "import { createConventionSiteServer } from 'karui/ssr/site-server';",
+    "import { createConventionSiteServer } from '@rigbyhost/karui/ssr/site-server';",
     '',
     'createConventionSiteServer().catch((error) => {',
     '  console.error(error);',
@@ -109,7 +109,7 @@ const DEFAULT_TEMPLATE_FILES: Record<string, (context: TemplateContext) => strin
     '',
   ].join('\n'),
   'src/app.tsx': () => [
-    "import { defineCounterSite, type CounterSiteState, type FileSystemModule } from 'karui/ssr';",
+    "import { defineCounterSite, type CounterSiteState, type FileSystemModule } from '@rigbyhost/karui/ssr';",
     "import Layout from './layout.js';",
     '',
     "const pages = import.meta.glob('./pages/**/*.tsx', { eager: true }) as Record<string, FileSystemModule<CounterSiteState>>;",
@@ -128,8 +128,8 @@ const DEFAULT_TEMPLATE_FILES: Record<string, (context: TemplateContext) => strin
     '',
   ].join('\n'),
   'src/layout.tsx': () => [
-    "import type { CounterSiteLayoutProps } from 'karui/ssr';",
-    "import { Link } from 'karui/router';",
+    "import type { CounterSiteLayoutProps } from '@rigbyhost/karui/ssr';",
+    "import { Link } from '@rigbyhost/karui/router';",
     '',
     'const shellStyle = [',
     "  'max-width:960px',",
@@ -171,8 +171,8 @@ const DEFAULT_TEMPLATE_FILES: Record<string, (context: TemplateContext) => strin
     '',
   ].join('\n'),
   'src/pages/layout.tsx': () => [
-    "import type { CounterSiteState } from 'karui/ssr';",
-    "import type { FileLayoutProps } from 'karui/router/file-based';",
+    "import type { CounterSiteState } from '@rigbyhost/karui/ssr';",
+    "import type { FileLayoutProps } from '@rigbyhost/karui/router/file-based';",
     '',
     'const sectionStyle = [',
     "  'margin-top:12px',",
@@ -195,8 +195,8 @@ const DEFAULT_TEMPLATE_FILES: Record<string, (context: TemplateContext) => strin
     '',
   ].join('\n'),
   'src/pages/index.tsx': () => [
-    "import { Link } from 'karui/router';",
-    "import type { CounterSiteRouteContext } from 'karui/ssr';",
+    "import { Link } from '@rigbyhost/karui/router';",
+    "import type { CounterSiteRouteContext } from '@rigbyhost/karui/ssr';",
     '',
     'export const meta = {',
     "  title: 'Home',",
@@ -217,7 +217,7 @@ const DEFAULT_TEMPLATE_FILES: Record<string, (context: TemplateContext) => strin
     '',
   ].join('\n'),
   'src/pages/about.tsx': () => [
-    "import type { CounterSiteRouteContext } from 'karui/ssr';",
+    "import type { CounterSiteRouteContext } from '@rigbyhost/karui/ssr';",
     '',
     'export const meta = {',
     "  title: 'About',",
@@ -247,9 +247,9 @@ const DEFAULT_TEMPLATE_FILES: Record<string, (context: TemplateContext) => strin
     '',
   ].join('\n'),
   'src/pages/docs/layout.tsx': () => [
-    "import { Link } from 'karui/router';",
-    "import type { CounterSiteState } from 'karui/ssr';",
-    "import type { FileLayoutProps } from 'karui/router/file-based';",
+    "import { Link } from '@rigbyhost/karui/router';",
+    "import type { CounterSiteState } from '@rigbyhost/karui/ssr';",
+    "import type { FileLayoutProps } from '@rigbyhost/karui/router/file-based';",
     '',
     'const docsStyle = [',
     "  'margin-top:10px',",
@@ -272,8 +272,8 @@ const DEFAULT_TEMPLATE_FILES: Record<string, (context: TemplateContext) => strin
     '',
   ].join('\n'),
   'src/pages/docs/[slug].tsx': () => [
-    "import { Link } from 'karui/router';",
-    "import type { CounterSiteRouteContext } from 'karui/ssr';",
+    "import { Link } from '@rigbyhost/karui/router';",
+    "import type { CounterSiteRouteContext } from '@rigbyhost/karui/ssr';",
     '',
     'export const meta = {',
     "  title: 'Docs',",
@@ -312,7 +312,7 @@ const DEFAULT_TEMPLATE_FILES: Record<string, (context: TemplateContext) => strin
     '',
   ].join('\n'),
   'src/pages/404.tsx': () => [
-    "import type { CounterSiteRouteContext } from 'karui/ssr';",
+    "import type { CounterSiteRouteContext } from '@rigbyhost/karui/ssr';",
     '',
     'export const meta = {',
     "  title: '404',",
@@ -329,7 +329,7 @@ const DEFAULT_TEMPLATE_FILES: Record<string, (context: TemplateContext) => strin
     '',
   ].join('\n'),
   'src/pages/error.tsx': () => [
-    "import type { CounterSiteErrorContext } from 'karui/ssr';",
+    "import type { CounterSiteErrorContext } from '@rigbyhost/karui/ssr';",
     '',
     'export const meta = {',
     "  title: 'Error',",
@@ -353,7 +353,7 @@ const DEFAULT_TEMPLATE_FILES: Record<string, (context: TemplateContext) => strin
   'README.md': ({ projectName }) => [
     `# ${projectName}`,
     '',
-    'Scaffolded with `karui` CLI.',
+    'Scaffolded with `@rigbyhost/karui` CLI.',
     '',
     '## Start',
     '',

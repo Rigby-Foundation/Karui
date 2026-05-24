@@ -1,4 +1,4 @@
-import type { CounterSiteRouteContext } from 'karui/ssr';
+import type { CounterSiteRouteContext } from '@rigbyhost/karui/ssr';
 
 export const meta = {
   title: 'About',

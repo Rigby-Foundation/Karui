@@ -163,7 +163,7 @@ async function importVite(): Promise<ViteModule> {
     return (await import('vite')) as unknown as ViteModule;
   } catch {
     throw new Error(
-      '[karui/server/ssr] "vite" is required in development mode. Install it in your app: npm i -D vite'
+      '[@rigbyhost/karui/server/ssr] "vite" is required in development mode. Install it in your app: npm i -D vite'
     );
   }
 }
@@ -219,13 +219,13 @@ export async function createSsrServer(): Promise<void> {
       configFile: false,
       resolve: {
         alias: {
-          'karui/jsx-runtime': path.resolve(root, 'src/jsx/jsx-runtime.ts'),
-          'karui/jsx-dev-runtime': path.resolve(root, 'src/jsx/jsx-dev-runtime.ts'),
+          '@rigbyhost/karui/jsx-runtime': path.resolve(root, 'src/jsx/jsx-runtime.ts'),
+          '@rigbyhost/karui/jsx-dev-runtime': path.resolve(root, 'src/jsx/jsx-dev-runtime.ts'),
         },
       },
       esbuild: {
         jsx: 'automatic',
-        jsxImportSource: 'karui',
+        jsxImportSource: '@rigbyhost/karui',
       },
       appType: 'custom',
       server: { middlewareMode: true },

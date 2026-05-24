@@ -221,7 +221,7 @@ async function importVite(): Promise<ViteModule> {
     return (await import('vite')) as unknown as ViteModule;
   } catch {
     throw new Error(
-      '[karui/ssr/site-server] "vite" is required in development mode. Install it in your app: npm i -D vite'
+      '[@rigbyhost/karui/ssr/site-server] "vite" is required in development mode. Install it in your app: npm i -D vite'
     );
   }
 }

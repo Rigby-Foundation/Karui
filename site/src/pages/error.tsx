@@ -1,4 +1,4 @@
-import type { CounterSiteErrorContext } from 'karui/ssr';
+import type { CounterSiteErrorContext } from '@rigbyhost/karui/ssr';
 
 export const meta = {
   title: 'Error',

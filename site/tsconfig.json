@@ -8,17 +8,17 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "types": ["node", "vite/client"],
     "jsx": "react-jsx",
-    "jsxImportSource": "karui",
+    "jsxImportSource": "@rigbyhost/karui",
     "baseUrl": ".",
     "paths": {
-      "karui": ["../src/index.ts"],
-      "karui/core": ["../src/core/index.ts"],
-      "karui/ssr": ["../src/ssr/index.ts"],
-      "karui/router": ["../src/router/index.ts"],
-      "karui/router/file-based": ["../src/router/file-based.ts"],
-      "karui/jsx": ["../src/jsx/index.ts"],
-      "karui/jsx-runtime": ["../src/jsx/jsx-runtime.ts"],
-      "karui/jsx-dev-runtime": ["../src/jsx/jsx-dev-runtime.ts"]
+      "@rigbyhost/karui": ["../src/index.ts"],
+      "@rigbyhost/karui/core": ["../src/core/index.ts"],
+      "@rigbyhost/karui/ssr": ["../src/ssr/index.ts"],
+      "@rigbyhost/karui/router": ["../src/router/index.ts"],
+      "@rigbyhost/karui/router/file-based": ["../src/router/file-based.ts"],
+      "@rigbyhost/karui/jsx": ["../src/jsx/index.ts"],
+      "@rigbyhost/karui/jsx-runtime": ["../src/jsx/jsx-runtime.ts"],
+      "@rigbyhost/karui/jsx-dev-runtime": ["../src/jsx/jsx-dev-runtime.ts"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"]

@@ -1,6 +1,6 @@
 # BetterHelper Test Site
 
-A separate package for the SSR test site based on `karui`.
+A separate package for the SSR test site based on `@rigbyhost/karui`.
 
 ## Commands
 
@@ -38,7 +38,7 @@ Loader data is available in the page component via `ctx.data`.
 For internal navigation, use `Link`:
 
 ```tsx
-import { Link } from 'karui/router';
+import { Link } from '@rigbyhost/karui/router';
 ```
 
 ## What remains in the application
@@ -47,7 +47,7 @@ import { Link } from 'karui/router';
 - `src/app.tsx` — thin bootstrap: `pages` + `layout` -> `defineCounterSite(...)`
 - `src/pages/*` — the pages themselves
 
-`entry-client.ts`, `entry-server.ts`, `router.ts`, `state.ts`, `types.ts` are fully moved to the framework (`karui/ssr`, `karui/router/file-based`, `karui/core`).
+`entry-client.ts`, `entry-server.ts`, `router.ts`, `state.ts`, `types.ts` are fully moved to the framework (`@rigbyhost/karui/ssr`, `@rigbyhost/karui/router/file-based`, `@rigbyhost/karui/core`).
 
 ## SSR hydration modes
 

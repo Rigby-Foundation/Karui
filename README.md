@@ -1,6 +1,6 @@
-# BetterHelperjs Framework
+# Karui Framework
 
-BetterHelperjs is a full-stack TypeScript framework with its own JSX runtime, file-based router, nested layouts, loaders, and SSR by Rigby Foundation.
+Karui is a full-stack TypeScript framework with its own JSX runtime, file-based router, nested layouts, loaders, and SSR by Rigby Foundation.
 The base package has no mandatory runtime dependencies (prod deps = 0).
 
 ## Attribution
@@ -22,7 +22,7 @@ npm run dev         # starts the test SSR site from ./site
 Create a new Vite + SSR project:
 
 ```bash
-npx karui create my-app
+npx @rigbyhost/karui create my-app
 ```
 
 Options:
@@ -52,12 +52,12 @@ Where pages are:
 
 ## JSX and router without React/Preact
 
-- JSX runtime: `karui/jsx-runtime`, `karui/jsx-dev-runtime`, `karui/jsx`
-- Hooks: `useState`, `useReducer`, `useEffect`, `useMemo`, `useCallback`, `useRef` from `karui/jsx`
-- Context API: `createContext`, `useContext` from `karui/jsx`
-- Router core: `karui/router`
-- File-based router helpers: `karui/router/file-based`
-- State helpers: `karui/core` (`createCounterRenderState`, `serializeState`, ...)
+- JSX runtime: `@rigbyhost/karui/jsx-runtime`, `@rigbyhost/karui/jsx-dev-runtime`, `@rigbyhost/karui/jsx`
+- Hooks: `useState`, `useReducer`, `useEffect`, `useMemo`, `useCallback`, `useRef` from `@rigbyhost/karui/jsx`
+- Context API: `createContext`, `useContext` from `@rigbyhost/karui/jsx`
+- Router core: `@rigbyhost/karui/router`
+- File-based router helpers: `@rigbyhost/karui/router/file-based`
+- State helpers: `@rigbyhost/karui/core` (`createCounterRenderState`, `serializeState`, ...)
 
 ### File-based router extras
 
@@ -66,8 +66,8 @@ Where pages are:
 - Error entities: `pages/error.tsx` (global), `export const errorBoundary = ...` (route-level)
 - Not Found entities: `pages/404.tsx` or `pages/not-found.tsx`
 - `notFound()` helper for loader/component scenarios
-- SPA links: `<Link href=\"/route\" />` from `karui/router`
-- Dev SSR server (`karui/ssr/site-server`) requires `vite` in the application project.
+- SPA links: `<Link href=\"/route\" />` from `@rigbyhost/karui/router`
+- Dev SSR server (`@rigbyhost/karui/ssr/site-server`) requires `vite` in the application project.
 
 ### SSR modes
 
@@ -78,7 +78,7 @@ Where pages are:
 
 ## Legacy Browser Build
 
-After `npm run build`, `dist/vite/better-helper.iife.js` (target: `es2015`) is additionally built to include the framework in legacy browsers via a plain `<script>`.
+After `npm run build`, `dist/vite/karui.iife.js` (target: `es2015`) is additionally built to include the framework in legacy browsers via a plain `<script>`.
 
 ## Legacy API (Deprecated)
 

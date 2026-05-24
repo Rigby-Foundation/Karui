@@ -4,13 +4,13 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   resolve: {
     alias: {
-      'karui/jsx-runtime': resolve(__dirname, 'src/jsx/jsx-runtime.ts'),
-      'karui/jsx-dev-runtime': resolve(__dirname, 'src/jsx/jsx-dev-runtime.ts'),
+      '@rigbyhost/karui/jsx-runtime': resolve(__dirname, 'src/jsx/jsx-runtime.ts'),
+      '@rigbyhost/karui/jsx-dev-runtime': resolve(__dirname, 'src/jsx/jsx-dev-runtime.ts'),
     },
   },
   esbuild: {
     jsx: 'automatic',
-    jsxImportSource: 'karui',
+    jsxImportSource: '@rigbyhost/karui',
   },
   build: {
     outDir: 'dist/ssr/client',

@@ -1,6 +1,6 @@
-import { Link } from 'karui/router';
-import type { FileLayoutProps } from 'karui/router/file-based';
-import type { CounterSiteState } from 'karui/ssr';
+import { Link } from '@rigbyhost/karui/router';
+import type { FileLayoutProps } from '@rigbyhost/karui/router/file-based';
+import type { CounterSiteState } from '@rigbyhost/karui/ssr';
 
 const docsStyle = [
   'margin-top:10px',

@@ -1,5 +1,5 @@
-import type { CounterSiteLayoutProps } from 'karui/ssr';
-import { Link } from 'karui/router';
+import type { CounterSiteLayoutProps } from '@rigbyhost/karui/ssr';
+import { Link } from '@rigbyhost/karui/router';
 
 const shellStyle = [
   'max-width:960px',

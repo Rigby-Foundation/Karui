@@ -24,7 +24,7 @@ function printUsage(): void {
     'Karui CLI',
     '',
     'Usage:',
-    '  karui create <project-name> [options]',
+    '  @rigbyhost/karui create <project-name> [options]',
     '',
     'Options:',
     '  --pm <npm|pnpm|yarn|bun>   package manager for install',
@@ -189,6 +189,6 @@ async function main(): Promise<void> {
 
 main().catch((error) => {
   const message = error instanceof Error ? error.message : String(error);
-  console.error(`[karui] ${message}`);
+  console.error(`[@rigbyhost/karui] ${message}`);
   process.exit(1);
 });

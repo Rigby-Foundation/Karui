@@ -22,7 +22,7 @@ describe('cli scaffold', () => {
     expect(Object.keys(files)).toContain('package.json');
     expect(Object.keys(files)).toContain('src/app.tsx');
     expect(Object.keys(files)).toContain('src/pages/docs/[slug].tsx');
-    expect(files['package.json']).toContain('"karui": "^3.0.2"');
+    expect(files['package.json']).toContain('"@rigbyhost/karui": "^3.0.2"');
   });
 
   it('writes scaffold to target directory', async () => {
