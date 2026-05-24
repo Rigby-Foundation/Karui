@@ -3,6 +3,10 @@
   "version": "4.0.1",
   "description": "Full-stack TypeScript framework with JSX runtime, file-based routing, and SSR for Node/Bun/Deno.",
   "author": "Rigby Foundation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rigby-Foundation/Karui"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
