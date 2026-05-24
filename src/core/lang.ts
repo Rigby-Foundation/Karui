@@ -51,11 +51,13 @@ export class LanguageService {
       const key = htmlElement.dataset.trans;
       if (!key) continue;
 
-      const text = this.main[key] ?? `<code>lang.from('${key}')</code>`;
+      const text = this.main[key] ?? key;
       const tag = htmlElement.tagName;
 
       if (tag === 'IMG') {
-        (htmlElement as HTMLImageElement).src = text;
+        if (/^https?:\/\//.test(text) || text.startsWith('/') || text.startsWith('./')) {
+          (htmlElement as HTMLImageElement).src = text;
+        }
       } else if (tag === 'INPUT' || tag === 'TEXTAREA') {
         const input = htmlElement as HTMLInputElement | HTMLTextAreaElement;
         if (tag === 'INPUT' && (input as HTMLInputElement).type === 'submit') {
@@ -64,7 +66,7 @@ export class LanguageService {
           input.placeholder = text;
         }
       } else {
-        htmlElement.innerHTML = text;
+        htmlElement.textContent = text;
       }
     }
 

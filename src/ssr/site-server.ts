@@ -1,6 +1,6 @@
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
 import { createReadStream } from 'node:fs';
-import { readFile, stat } from 'node:fs/promises';
+import { readFile, realpath, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -152,20 +152,32 @@ function writeHtml(response: ServerResponse, status: number, body: string): void
   response.end(body);
 }
 
-function safeStaticPath(rootDir: string, requestPath: string): string | null {
-  const decodedPath = decodeURIComponent(requestPath);
+async function safeStaticPath(rootDir: string, requestPath: string): Promise<string | null> {
+  if (requestPath.includes('\0')) return null;
+
   const root = path.resolve(rootDir);
-  const resolved = path.resolve(root, `.${decodedPath}`);
+  const resolved = path.resolve(root, `.${requestPath}`);
 
   if (!resolved.startsWith(root + path.sep) && resolved !== root) {
     return null;
   }
 
-  return resolved;
+  let real: string;
+  try {
+    real = await realpath(resolved);
+  } catch {
+    return null;
+  }
+
+  if (!real.startsWith(root + path.sep) && real !== root) {
+    return null;
+  }
+
+  return real;
 }
 
 async function serveStatic(response: ServerResponse, method: string, rootDir: string, requestPath: string): Promise<boolean> {
-  const staticPath = safeStaticPath(rootDir, requestPath);
+  const staticPath = await safeStaticPath(rootDir, requestPath);
   if (!staticPath) return false;
 
   let fileStat;

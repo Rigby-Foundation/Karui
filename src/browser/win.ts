@@ -144,7 +144,8 @@ export class WindowManager {
       if (!title) return;
 
       if (!windowRecord.inRename) {
-        title.innerHTML = `<input ${this.renameAttrs} id="rename${winId}" value="${title.textContent ?? ''}">`;
+        const currentText = (title.textContent ?? '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        title.innerHTML = `<input ${this.renameAttrs} id="rename${winId}" value="${currentText}">`;
         windowRecord.inRename = true;
       } else {
         const renameInput = this.dom.id(`rename${winId}`) as HTMLInputElement | null;
@@ -165,12 +166,12 @@ export class WindowManager {
     const hider = this.dom.id(`hider${win.id}`);
 
     if (title) {
-      title.innerHTML = newTitle;
+      title.textContent = newTitle;
       title.removeAttribute('data-trans');
     }
 
     if (hider) {
-      hider.innerHTML = newTitle;
+      hider.textContent = newTitle;
       hider.removeAttribute('data-trans');
     }
   }

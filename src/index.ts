@@ -50,7 +50,7 @@ export function createHelper(options: CreateHelperOptions = {}): HelperFramework
   }
 
   const helper: HelperFramework = {
-    ver: options.version ?? '3.0.6',
+    ver: options.version ?? '3.0.7',
     runtime: detectRuntime(),
     http,
     lang,
