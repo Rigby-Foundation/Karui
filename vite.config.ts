@@ -20,7 +20,7 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'Karui',
       formats: ['es', 'umd', 'iife'],
-      fileName: (format) => `@rigbyhost/karui.${format}.js`,
+      fileName: (format) => `karui.${format}.js`,
     },
     outDir: 'dist/vite',
     emptyOutDir: true,
